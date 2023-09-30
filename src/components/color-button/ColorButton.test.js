@@ -8,7 +8,7 @@ test("color button has correct initial color", () => {
   // click the button
   fireEvent.click(buttonElm);
   expect(buttonElm).toHaveStyle({ backgroundColor: "blue" });
-  expect(buttonElm.textContent).toBe("Change to red");
+  expect(buttonElm).toHaveTextContent("Change to red");
 });
 test("color button checkbox inintial condition", () => {
   render(<ColorButton />);
