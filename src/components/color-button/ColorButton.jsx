@@ -20,6 +20,7 @@ export default function ColorButton() {
         onChange={() => setDisabled(!disabled)}
         // onChange={(e) => setDisabled(e.target.checked)}
       />
+      <label htmlFor="disable-button-checkbox">Disable button</label>
     </div>
   );
 }
