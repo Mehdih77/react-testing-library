@@ -1,8 +1,8 @@
-import ColorButton from "./components/color-button/ColorButton";
+import SummaryForm from "./pages/summary/SummaryForm";
 function App() {
   return (
     <div className="App">
-      <ColorButton />
+      <SummaryForm />
     </div>
   );
 }
