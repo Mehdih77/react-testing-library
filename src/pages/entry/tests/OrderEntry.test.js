@@ -13,7 +13,8 @@ test("handle errors for scoops and topping routes", async () => {
   );
 
   render(<OrderEntry />);
-  // in here we wait for get all data
+  // with "waitFor" in here we wait for get all data
+  // BUT with "findAllByRole" we wait for the first response of data
   await waitFor(async () => {
     const alerts = await screen.findAllByRole("alert");
     expect(alerts).toHaveLength(2);
