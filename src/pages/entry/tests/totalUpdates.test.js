@@ -56,18 +56,20 @@ test("update topping subtotal when topping change", async () => {
 // scoop is input type so we type it (user.type)
 
 describe("grand total", () => {
-  test("grand total starts at $0.00", () => {
-    render(<OrderEntry />);
-    const grandTotal = screen.getByRole("heading", {
-      name: /grand total: \$/i,
-    });
-    expect(grandTotal).toHaveTextContent("0.00");
-  });
+  // test("grand total starts at $0.00", () => {
+  //   render(<OrderEntry />);
+  //   const grandTotal = screen.getByRole("heading", {
+  //     name: /grand total: \$/i,
+  //   });
+  //   expect(grandTotal).toHaveTextContent("0.00");
+  // });
+
   test("grand total updates properly if scoop is added first", async () => {
     render(<OrderEntry />);
     const grandTotal = screen.getByRole("heading", {
       name: /grand total: \$/i,
     });
+    expect(grandTotal).toHaveTextContent("0.00");
 
     // first type scoop
     const vanillaInput = await screen.findByRole("spinbutton", {
