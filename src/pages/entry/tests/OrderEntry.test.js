@@ -15,7 +15,8 @@ test("handle errors for scoops and topping routes", async () => {
       res(ctx.status(500))
     )
   );
-  render(<OrderEntry />);
+  //* jest.fn() not need here cuz it test the error but we use it for sure
+  render(<OrderEntry setOrderPhase={jest.fn()} />);
   // with "waitFor" in here we wait for get all data
   // BUT with "findAllByRole" we wait for the first response of data
   await waitFor(async () => {
@@ -23,3 +24,12 @@ test("handle errors for scoops and topping routes", async () => {
     expect(alerts).toHaveLength(2);
   });
 });
+
+//! jest.fn():
+// using that jest mock function as a placeholder when there is 
+// a function props and as you will recall this is needed when
+// the component that you are rendering has a props
+// that is a function that is going to get run during the course of the test
+// but is not actually important to test itelf
+// if it is going to get run, you need to includes it as a prop
+// Or you are going to get errors in your tests
