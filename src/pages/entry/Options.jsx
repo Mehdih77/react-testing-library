@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react";
 import { pricePerItem } from "../../constants";
 import { useOrderDetails } from "../../contexts/OrderDetails";
+import { formatCurrency } from "../../utils";
 import axios from "axios";
 import Row from "react-bootstrap/Row";
 import ScoopOption from "./ScoopOption";
 import ToppingOption from "./ToppingOption";
 import AlertBanner from "../common/AlertBanner";
 
-// optionType is "scoops" OR "toppings"
 export default function Options({ optionType }) {
-  const [error, setError] = useState(false);
   const [items, setItems] = useState([]);
+  const [error, setError] = useState(false);
   const [orderDetails, updateItemCount] = useOrderDetails();
 
+  // optionType is 'scoops' or 'toppings'
   useEffect(() => {
     axios
       .get(`http://localhost:3030/${optionType}`)
@@ -41,7 +42,7 @@ export default function Options({ optionType }) {
   return (
     <>
       <h2>{title}</h2>
-      <p>{pricePerItem[optionType]} each</p>
+      <p>{formatCurrency(pricePerItem[optionType])} each</p>
       <p>
         {title} total: {orderDetails.totals[optionType]}
       </p>

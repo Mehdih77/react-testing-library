@@ -1,4 +1,8 @@
-import { screen, render, waitFor } from "@testing-library/react";
+import {
+  screen,
+  render,
+  waitFor,
+} from "../../../test-utils/testing-library-utils";
 import { server } from "../../../mocks/server";
 import { rest } from "msw";
 import OrderEntry from "../OrderEntry";
@@ -11,7 +15,6 @@ test("handle errors for scoops and topping routes", async () => {
       res(ctx.status(500))
     )
   );
-
   render(<OrderEntry />);
   // with "waitFor" in here we wait for get all data
   // BUT with "findAllByRole" we wait for the first response of data
