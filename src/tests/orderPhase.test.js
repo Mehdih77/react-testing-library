@@ -65,10 +65,9 @@ test("Order phases for happy path", async () => {
   });
   await user.click(confirmOrderButton);
 
-  //TODO: check it
   // Expect "loading" to show
-  // const loading = screen.getByText(/loading/i);
-  // expect(loading).toBeInTheDocument();
+  const loading = screen.getByText(/loading/i);
+  expect(loading).toBeInTheDocument();
 
   // check confirmation page text
   // this one is async because there is a POST request to server in between summary
