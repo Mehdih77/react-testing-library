@@ -15,3 +15,11 @@ https://www.smashingmagazine.com/2020/07/react-apps-testing-library/
 https://cultivate.software/useeffect/
 
 https://github.com/gitdagray/next-testing-example-app/tree/main
+
+## AAA Pattern:
+**Arrange:** Set up the test data, test conditions and test environment
+
+**Act:** Run logic that should be tested (e.g. execute function)
+
+**Arrange:** Compare execution results with expected result
+
