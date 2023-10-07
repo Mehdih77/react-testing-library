@@ -21,5 +21,5 @@ https://github.com/gitdagray/next-testing-example-app/tree/main
 
 **Act:** Run logic that should be tested (e.g. execute function)
 
-**Arrange:** Compare execution results with expected result
+**Assert:** Compare execution results with expected result
 
