@@ -16,6 +16,8 @@ https://cultivate.software/useeffect/
 
 https://github.com/gitdagray/next-testing-example-app/tree/main
 
+https://dev.to/peterlidee/-mocking-usesearchparams-and-userouter-with-jest-in-next-13-nextnavigation-15bd
+
 ## AAA Pattern:
 **Arrange:** Set up the test data, test conditions and test environment
 
